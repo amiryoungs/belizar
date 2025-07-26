@@ -1,0 +1,13 @@
+{
+  "name": "daily-fortune",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd app && npm run web",
+    "build": "cd app && npx expo export -p web",
+    "start": "cd app && npm start"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.2.25"
+  }
+}

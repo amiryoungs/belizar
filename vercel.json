@@ -1,0 +1,20 @@
+{
+  "buildCommand": "cd app && npx expo export --platform web",
+  "outputDirectory": "app/web-build",
+  "devCommand": "cd app && npx expo start --web",
+  "functions": {
+    "api/*.ts": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
