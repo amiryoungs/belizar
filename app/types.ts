@@ -13,7 +13,7 @@ export interface AppState {
 }
 
 export interface FortuneApiResponse {
-  fortune: string;
+  data: string;
   success: boolean;
   error?: string;
 }
