@@ -160,35 +160,61 @@ export default function App() {
     </motion.div>
   );
 
-  const renderFortuneView = () => (
-    <motion.div 
-      key="fortune"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.5 }}
-      className="container"
-    >
-      <div className="fortune-container">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="fortune-text"
-        >
-          {appState.todaysFortune?.text}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="fortune-subtext"
-        >
-          Your fortune for today
-        </motion.p>
-      </div>
-    </motion.div>
-  );
+  const renderFortuneView = () => {
+    const formattedFortune = (appState.todaysFortune?.text || '')
+      .split('—')
+      .map(sentence => {
+        const trimmed = sentence.trim();
+        return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+      })
+      .join('. ');
+
+    return (
+      <motion.div 
+        key="fortune"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.5 }}
+        className="container"
+      >
+        <div className="fortune-container">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fortune-title"
+          >
+            Your Fortune
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="fortune-text"
+          >
+            {formattedFortune}
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="fortune-subtext"
+          >
+            Come back tomorrow for a new fortune
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="fortune-disclaimer"
+          >
+            FOR ENTERTAINMENT PURPOSES ONLY
+          </motion.p>
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <div className="wrapper">

@@ -27,14 +27,15 @@
 }
 
 .generate-button {
-  height: 56px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px;
+  padding: 12px 18px;
   background-color: #7130DA;
   border: 2px solid #000000;
-  border-radius: 100px;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #000000;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -51,7 +52,7 @@
 
 .button-text {
   font-family: 'Jacquard 24', serif;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 24px;
   letter-spacing: 0.15px;
   color: #FFFFFF;
@@ -66,8 +67,8 @@
 }
 
 .loading-text {
-  font-size: 20px;
-  color: #6366f1;
+  font-size: 32px;
+  color: #000000;
   font-family: 'Jacquard 24', serif;
 }
 
@@ -76,22 +77,42 @@
   flex-direction: column;
   align-items: center;
   padding: 0 24px;
+  max-width: 400px;
+  border: 2px solid #000;
 }
 
 .fortune-text {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
-  text-align: center;
-  color: #1f2937;
+  text-align: left;
+  color: #2c2c2c;
   font-weight: 500;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin-bottom: 24px;
+  width: 100%;
 }
 
 .fortune-subtext {
-  font-size: 16px;
-  color: #6b7280;
-  font-style: italic;
+  font-size: 24px;
+  color: #ef4444;
+  font-family: 'Jacquard 24', serif;
+}
+
+/* Add title above fortune text */
+.fortune-title {
+  font-family: 'Jacquard 24', serif;
+  font-size: 40px;
+  color: #ef4444;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.fortune-disclaimer {
+  font-family: 'Arial', sans-serif;
+  color: #ef4444;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 /* Responsive design */
