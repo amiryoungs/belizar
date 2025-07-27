@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Daily Fortune",
-    "slug": "daily-fortune",
+    "name": "Belizar",
+    "slug": "belizar",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,9 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
