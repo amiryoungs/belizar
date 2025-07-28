@@ -11,7 +11,7 @@ async function generateFortune(): Promise<string> {
   // AIDEV-NOTE: Crafted prompt for personalized, meaningful fortunes
   const prompt = `Generate a single, thoughtful fortune that feels personal and meaningful. 
   The fortune should be:
-  - 80-100 words
+  - 40-60 words
   - Inspiring and positive
   - Not generic - feel personal
   - About growth, opportunity, or inner wisdom
