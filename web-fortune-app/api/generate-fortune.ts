@@ -5,7 +5,6 @@ async function generateFortune(): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
   
   if (!apiKey) {
-    console.error('OpenAI API key not configured');
     throw new Error('OpenAI API key not configured');
   }
 
@@ -44,11 +43,8 @@ async function generateFortune(): Promise<string> {
   });
 
   if (!response.ok) {
-    console.error('OpenAI API error:', response);
     throw new Error(`OpenAI API error: ${response.status}`);
   }
-  console.log('OpenAI API response:', response);
-  console.log('OpenAI API response:', response.json());
   const data = await response.json();
   return data.choices[0]?.message?.content?.trim() || 'Your fortune awaits tomorrow.';
 }
